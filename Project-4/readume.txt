@@ -15,4 +15,4 @@ into several key aspects of the project:
 4. What the money was spent on?
 5. Will we have enough money to complete the project?
 6. Where can we cut costs?
-7. I want to see data at the national, provincial and town level.
+7. Data will be observed at the national, provincial and town level.
