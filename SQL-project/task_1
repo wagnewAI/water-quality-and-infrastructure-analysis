@@ -1,2 +1,30 @@
-select *
-from location;
+SET SQL_SAFE_UPDATES = 0;
+use md_water_services;
+SELECT *
+FROM
+   water_source
+   where source_id in('AkKi00881224','SoRu37635224',
+   'SoRu36096224','AkRu05234224' ,'HaZa21742224') ;
+  -- where time_in_queue > 500 LIMIT 10;
+use md_water_services;
+So please write a query to find records where the subject_quality_score is 10 -- only looking for home taps -- and where the source
+was visited a second time. What will this tell us?
+SELECT *
+FROM water_quality
+WHERE subjective_quality_score = 10
+  -- AND source_type = 'home tap'
+  AND visit_count = 2;
+218 rows of data are there in this query!
+So, write a query that checks if the results is Clean but the biological column is > 0.01.
+use md_water_services;
+SELECT *
+FROM well_pollution
+where results = 'Clean' 
+  AND biological > 0.01;
+64 rows
+Hint: To find these descriptions, search for the word Clean with additional characters after it. As this is what separates incorrect descriptions from the records that should have "Clean".
+use md_water_services;
+SELECT *
+FROM well_pollution
+where description LIKE 'Clean_%' 
+ AND biological > 0.01;
